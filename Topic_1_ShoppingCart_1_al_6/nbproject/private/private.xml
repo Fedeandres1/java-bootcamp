@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/View/Probar.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Gestor/GestorShoppingCart.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StateFinalizado.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/DetallePedido.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Manager.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/IObserver.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Log.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StrategyCash.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Cuenta.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StrategyCreditCard.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/ListManager.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StatePedido.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Pedido.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StateEnPreparacion.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StateCancelado.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Customer.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StatePendienteDePreparacion.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StateDespachado.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StateConfirmado.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/IStrategyPayment.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/ShoppingCart.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/DetailOffer.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/SingletonNumeroPedido.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StrategyPayPal.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Product.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Offer.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/Person.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/ISujeto.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Gestor/GestorLog.java</file>
+            <file>file:/C:/Users/Frederic/Documents/NetBeansProjects/Topic_1_ShoppingCart/src/Model/StatePreparado.java</file>
+        </group>
+    </open-files>
+</project-private>
