@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Java BootCamp base folders layout
 
 Please, use this repository as a base for you training phase. The idea is to
@@ -552,3 +553,7 @@ Create a functional shopping cart (just REST api). The minimum features to be co
 
 
 Thanks for reading!
+=======
+# java-bootcamp
+Java Bootcamp
+>>>>>>> origin/master
