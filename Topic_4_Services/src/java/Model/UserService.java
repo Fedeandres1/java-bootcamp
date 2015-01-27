@@ -11,22 +11,23 @@ package Model;
  */
 public interface UserService {
 
-    public boolean createUser(String username,
+    public void createUser(String username,
             String password,
             String confirmPassword,
             String email,
             String fullname);
 
-    public boolean removeUser(Account u,
+    public void removeUser(Account u,
             String password,
             String confirmPassword);
 
-    public boolean modifiUser();
+    public void modifiUser();
 
     public Account getUser();
 
-    public boolean addFriend();
+    public void addFriend();
 
-    public boolean removeFriend();
+    public void removeFriend();
+    public void addLikeToPhoto();
 
 }

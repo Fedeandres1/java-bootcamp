@@ -9,39 +9,47 @@ package Model;
  *
  * @author Frederic
  */
-public class UserServiceProxy  implements UserService{
+public class UserServiceProxy implements UserService {
 
-    @Override
-    public boolean createUser(String username, String password, String confirmPassword, String email, String fullname) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    UserService implement;
+
+    protected UserServiceProxy(UserService imp) {
+        this.implement = imp;
     }
 
     @Override
-    public boolean removeUser(Account u, String password, String confirmPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createUser(String username, String password, String confirmPassword, String email, String fullname) {
+        implement.createUser(username, password, confirmPassword, email, fullname);
     }
 
     @Override
-    public boolean modifiUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeUser(Account u, String password, String confirmPassword) {
+        implement.removeUser(u, password, confirmPassword);
+    }
+
+    @Override
+    public void modifiUser() {
+        implement.modifiUser();
     }
 
     @Override
     public Account getUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return implement.getUser();
     }
 
     @Override
-    public boolean addFriend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addFriend() {
+        implement.addFriend();
     }
 
     @Override
-    public boolean removeFriend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeFriend() {
+        implement.removeFriend();
     }
-   
-    
-    
-    
+
+    @Override
+    public void addLikeToPhoto() {
+        implement.addLikeToPhoto();
+    }
+
 }

@@ -9,43 +9,45 @@ package Model;
  *
  * @author Frederic
  */
-public class UserServiceJmsClient implements UserService{
-UserService jmsObject;
-public UserServiceJmsClient(){
-    //jmsObject=;
-}
+public class UserServiceWeb implements UserService{
+UserService imp=new UserImplement();
     @Override
     public void createUser(String username, String password, String confirmPassword, String email, String fullname) {
-       jmsObject.createUser(username, password, confirmPassword, email, fullname);
+        imp.createUser(username, password, confirmPassword, email, fullname);
     }
 
     @Override
     public void removeUser(Account u, String password, String confirmPassword) {
-       jmsObject.removeUser(u,password,confirmPassword);
+        imp.removeUser(u,password,confirmPassword);
     }
 
     @Override
     public void modifiUser() {
-        jmsObject.modifiUser();
+        imp.modifiUser();
     }
 
     @Override
     public Account getUser() {
-       return jmsObject.getUser();
+       return imp.getUser();
     }
 
     @Override
     public void addFriend() {
-        jmsObject.addFriend();
+      imp.addFriend();
     }
 
     @Override
     public void removeFriend() {
-      jmsObject.removeFriend();
+     imp.removeFriend();
     }
+
     @Override
-     public void addLikeToPhoto(){
-     jmsObject.addLikeToPhoto();
-         };
+    public void addLikeToPhoto() {
+     imp.addLikeToPhoto();
+    }
+    
+    
+    
+    
     
 }

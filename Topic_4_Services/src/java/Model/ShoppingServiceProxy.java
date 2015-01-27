@@ -9,10 +9,11 @@ package Model;
  *
  * @author Frederic
  */
-public class ShoppingServiceProxy implements ShoppingCartService{
-ShoppingCartService implement;
+public class ShoppingServiceProxy implements ShoppingCartService {
 
-    public ShoppingServiceProxy(ShoppingCartService implement) {
+    ShoppingCartService implement;
+
+    protected ShoppingServiceProxy(ShoppingCartService implement) {
         this.implement = implement;
     }
 
@@ -24,47 +25,39 @@ ShoppingCartService implement;
         this.implement = implement;
     }
 
-
-
-
-
-
-
-
-
     @Override
     public void buyProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.buyProduct();
     }
 
     @Override
     public void addItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.addItem();
     }
 
     @Override
     public void removeItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.removeItem();
     }
 
     @Override
     public double calculatePayment() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return implement.calculatePayment();
     }
 
     @Override
     public void saveCart() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.saveCart();
     }
 
     @Override
     public void getCartContent() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.getCartContent();
     }
 
     @Override
     public void createOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        implement.createOrder();
     }
-    
+
 }

@@ -9,50 +9,48 @@ package Model;
  *
  * @author Frederic
  */
-public class ShoppingWebServiceClient implements ShoppingCartService{
+public class ShoppingWebServiceClient implements ShoppingCartService {
+ShoppingCartService webService;
 
+
+public ShoppingWebServiceClient(){
+    //webService=;
     
     
-    
-    
-    
-    
-    
-    
-    
+}
     @Override
     public void buyProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      webService.buyProduct();
     }
 
     @Override
     public void addItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     webService.addItem();
     }
 
     @Override
     public void removeItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      webService.removeItem();
     }
 
     @Override
     public double calculatePayment() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return webService.calculatePayment();
     }
 
     @Override
     public void saveCart() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      webService.saveCart();
     }
 
     @Override
     public void getCartContent() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ webService.getCartContent();
     }
 
     @Override
     public void createOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       webService.createOrder();
     }
-    
+
 }

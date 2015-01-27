@@ -9,44 +9,41 @@ package Model;
  *
  * @author Frederic
  */
-public class ShoppingJmsClient implements ShoppingCartService{
-ShoppingCartService jmsObject;
-public ShoppingJmsClient(){
-    //jmsObject=
-}
+public class ShoppingWebService  implements ShoppingCartService{
+ShoppingCartService imp=new ShoppingCartImplement();
     @Override
     public void buyProduct() {
-       jmsObject.buyProduct();
+        imp.buyProduct();
     }
 
     @Override
     public void addItem() {
-       jmsObject.addItem();
+      imp.addItem();
     }
 
     @Override
     public void removeItem() {
-      jmsObject.removeItem();
+       imp.removeItem();
     }
 
     @Override
     public double calculatePayment() {
-      return jmsObject.calculatePayment();
+      return imp.calculatePayment();
     }
 
     @Override
     public void saveCart() {
-       jmsObject.saveCart();
+       imp.saveCart();
     }
 
     @Override
     public void getCartContent() {
-      jmsObject.getCartContent();
+    imp.getCartContent();
     }
 
     @Override
     public void createOrder() {
-      jmsObject.createOrder();
+    imp.createOrder();
     }
     
 }

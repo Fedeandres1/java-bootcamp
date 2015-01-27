@@ -11,18 +11,22 @@ package Model;
  */
 public class UserImplement implements UserService{
 
+    protected UserImplement(){
+        
+    }
+
     @Override
-    public boolean createUser(String username, String password, String confirmPassword, String email, String fullname) {
+    public void createUser(String username, String password, String confirmPassword, String email, String fullname) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean removeUser(Account u, String password, String confirmPassword) {
+    public void removeUser(Account u, String password, String confirmPassword) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean modifiUser() {
+    public void modifiUser() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -32,14 +36,20 @@ public class UserImplement implements UserService{
     }
 
     @Override
-    public boolean addFriend() {
+    public void addFriend() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean removeFriend() {
+    public void removeFriend() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void addLikeToPhoto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
    
     
