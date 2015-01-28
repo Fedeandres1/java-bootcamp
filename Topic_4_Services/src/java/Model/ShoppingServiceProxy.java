@@ -13,6 +13,10 @@ public class ShoppingServiceProxy implements ShoppingCartService {
 
     ShoppingCartService implement;
 
+    @Override
+    public ShoppingCart createShoppingCart(WebUser u) {
+        return implement.createShoppingCart(u);
+    }
     protected ShoppingServiceProxy(ShoppingCartService implement) {
         this.implement = implement;
     }
@@ -26,38 +30,35 @@ public class ShoppingServiceProxy implements ShoppingCartService {
     }
 
     @Override
-    public void buyProduct() {
-        implement.buyProduct();
+    public void buyProduct(WebUser user) {
+        implement.buyProduct(user);
     }
 
     @Override
-    public void addItem() {
-        implement.addItem();
+    public ShoppingCart  addLineItem(ShoppingCart cart,LineItem line,Product p,int quantity,double price) {
+       return implement.addLineItem(cart,line,p,quantity,price);
     }
 
     @Override
-    public void removeItem() {
-        implement.removeItem();
+    public ShoppingCart removeLineItem(ShoppingCart cart,LineItem line) {
+    return    implement.removeLineItem(cart,line);
     }
 
     @Override
-    public double calculatePayment() {
-        return implement.calculatePayment();
+    public double calculatePayment(ShoppingCart cart) {
+        return implement.calculatePayment(cart);
     }
 
     @Override
-    public void saveCart() {
-        implement.saveCart();
+    public void saveCart(ShoppingCart cart) {
+        implement.saveCart(cart);
     }
 
     @Override
-    public void getCartContent() {
-        implement.getCartContent();
+    public String getCartContent(ShoppingCart cart) {
+     return   implement.getCartContent(cart);
     }
 
-    @Override
-    public void createOrder() {
-        implement.createOrder();
-    }
+    
 
 }

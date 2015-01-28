@@ -9,16 +9,17 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *
+ * This class represent a account to buy a product
  * @author Frederic
  */
-public class  Account {
-  private  String id;
-   private Address billing_address;
-  private Date open,closed;
-  private ShoppingCart cart;
-  private ArrayList<Payment> pay;
-  ArrayList<Order> order;
+public class Account {
+
+    private String id;
+    private Address billing_address;
+    private Date open, closed;
+    private ShoppingCart cart;
+    private ArrayList<Payment> pay;
+   private ArrayList<Order> order;
 
     public Account(String id, Address billing_address, Date open, Date closed, ShoppingCart cart, ArrayList<Payment> pay, ArrayList<Order> order) {
         this.id = id;
@@ -28,6 +29,7 @@ public class  Account {
         this.cart = cart;
         this.pay = pay;
         this.order = order;
+        
     }
 
     public ArrayList<Payment> getPay() {
@@ -38,9 +40,8 @@ public class  Account {
         this.pay = pay;
     }
 
-   
-
     public Account() {
+        order=new ArrayList();
     }
 
     public String getId() {
@@ -57,6 +58,15 @@ public class  Account {
 
     public void setBilling_address(Address billing_address) {
         this.billing_address = billing_address;
+    }
+    public void addOrder(Order o){
+        if(order==null){
+            order=new ArrayList();
+            
+        }
+        order.add(o);
+        
+        
     }
 
     public Date getOpen() {
@@ -83,8 +93,6 @@ public class  Account {
         this.cart = cart;
     }
 
-   
-
     public ArrayList<Order> getOrder() {
         return order;
     }
@@ -92,9 +100,5 @@ public class  Account {
     public void setOrder(ArrayList<Order> order) {
         this.order = order;
     }
-  
-    
 
-   
-    
 }

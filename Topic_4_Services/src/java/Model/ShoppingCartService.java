@@ -10,15 +10,19 @@ package Model;
  * @author Frederic
  */
 public interface ShoppingCartService {
-    
-    
-    public void buyProduct();
-    public void addItem();
-    public void removeItem();
-    public double calculatePayment();
-    public void saveCart();
-    public void getCartContent();
-    public void createOrder();
-    
-    
+
+    public ShoppingCart createShoppingCart(WebUser u);
+
+    public void buyProduct(WebUser user);
+
+    public ShoppingCart addLineItem(ShoppingCart cart, LineItem line, Product p, int quantity, double price);
+
+    public ShoppingCart removeLineItem(ShoppingCart cart, LineItem line);
+
+    public double calculatePayment(ShoppingCart cart);
+
+    public void saveCart(ShoppingCart cart);
+
+    public String getCartContent(ShoppingCart cart);
+
 }

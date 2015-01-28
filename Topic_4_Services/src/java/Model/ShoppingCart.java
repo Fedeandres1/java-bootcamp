@@ -6,6 +6,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -13,15 +14,20 @@ import java.util.Date;
  * @author Frederic
  */
 public class ShoppingCart {
-    private  ArrayList<Product> LineItem;
-    private Date dateCreate;
+
+    private ArrayList<LineItem> lineItem = null;
+    private Date dateCreate = null;
 
     public ArrayList getLineItem() {
-        return LineItem;
+        if (lineItem == null) {
+            lineItem = new ArrayList();
+
+        }
+        return lineItem;
     }
 
-    public void setLineItem(ArrayList LineItem) {
-        this.LineItem = LineItem;
+    public void setLineItem(ArrayList lineItem) {
+        this.lineItem = lineItem;
     }
 
     public Date getDateCreate() {
@@ -33,13 +39,26 @@ public class ShoppingCart {
     }
 
     public ShoppingCart() {
+        if (lineItem == null) {
+            lineItem = new ArrayList();
+
+        }
+        Calendar cal = Calendar.getInstance();
+        dateCreate = cal.getTime();
     }
 
     public ShoppingCart(ArrayList LineItem, Date dateCreate) {
-        this.LineItem = LineItem;
+        this.lineItem = LineItem;
         this.dateCreate = dateCreate;
+
     }
-    
-    
-    
+
+    public void addLineItem(LineItem i) {
+        lineItem.add(i);
+
+    }
+
+    public void removeLineItem(LineItem i) {
+        lineItem.remove(i);
+    }
 }

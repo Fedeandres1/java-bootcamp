@@ -11,39 +11,46 @@ package Model;
  */
 public class ShoppingWebService  implements ShoppingCartService{
 ShoppingCartService imp=new ShoppingCartImplement();
+
+
+
+
+@Override
+public ShoppingCart createShoppingCart(WebUser u) {
+       return imp.createShoppingCart(u);
+    }
+
+
     @Override
-    public void buyProduct() {
-        imp.buyProduct();
+    public void buyProduct(WebUser user) {
+        imp.buyProduct(user);
     }
 
     @Override
-    public void addItem() {
-      imp.addItem();
+    public ShoppingCart  addLineItem(ShoppingCart cart,LineItem line,Product p,int quantity,double price) {
+     return imp.addLineItem(cart,line,p,quantity,price);
     }
 
     @Override
-    public void removeItem() {
-       imp.removeItem();
+    public ShoppingCart removeLineItem(ShoppingCart cart,LineItem line) {
+      return imp.removeLineItem(cart,line);
     }
 
     @Override
-    public double calculatePayment() {
-      return imp.calculatePayment();
+    public double calculatePayment(ShoppingCart cart) {
+      return imp.calculatePayment(cart);
     }
 
     @Override
-    public void saveCart() {
-       imp.saveCart();
+    public void saveCart(ShoppingCart cart) {
+       imp.saveCart(cart);
     }
 
     @Override
-    public void getCartContent() {
-    imp.getCartContent();
+    public String getCartContent(ShoppingCart cart) {
+    return imp.getCartContent(cart);
     }
 
-    @Override
-    public void createOrder() {
-    imp.createOrder();
-    }
+    
     
 }

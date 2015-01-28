@@ -13,6 +13,7 @@ import java.util.Date;
  * @author Frederic
  */
 public class Order {
+
     private Payment pay;
     private OrderState state;
     private String number;
@@ -48,9 +49,6 @@ public class Order {
     public void setShip_destiny(Address ship_destiny) {
         this.ship_destiny = ship_destiny;
     }
-    
-
-    
 
     public Order() {
     }
@@ -102,8 +100,5 @@ public class Order {
     public void setDetailOrder(ArrayList<LineItem> detailOrder) {
         this.detailOrder = detailOrder;
     }
-    
-    
-    
-    
+
 }

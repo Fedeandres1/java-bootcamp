@@ -6,7 +6,7 @@
 package Model;
 
 /**
- *
+ * This class represent the address
  * @author Frederic
  */
 public class Address {

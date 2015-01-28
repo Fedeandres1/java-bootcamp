@@ -10,47 +10,49 @@ package Model;
  * @author Frederic
  */
 public class ShoppingWebServiceClient implements ShoppingCartService {
-ShoppingCartService webService;
 
+    ShoppingCartService webService;
 
-public ShoppingWebServiceClient(){
-    //webService=;
-    
-    
-}
-    @Override
-    public void buyProduct() {
-      webService.buyProduct();
+    public ShoppingCart  createShoppingCart(WebUser u) {
+        return webService.createShoppingCart(u);
+    }
+
+    public ShoppingWebServiceClient() {
+        //webService=;
+
     }
 
     @Override
-    public void addItem() {
-     webService.addItem();
+    public void buyProduct(WebUser user) {
+        webService.buyProduct(user);
+        
     }
 
     @Override
-    public void removeItem() {
-      webService.removeItem();
+    public ShoppingCart addLineItem(ShoppingCart cart,LineItem line,Product p,int quantity,double price) {
+     return   webService.addLineItem(cart,line,p,quantity,price);
     }
 
     @Override
-    public double calculatePayment() {
-       return webService.calculatePayment();
+    public ShoppingCart  removeLineItem(ShoppingCart cart,LineItem line) {
+      return  webService.removeLineItem(cart,line);
     }
 
     @Override
-    public void saveCart() {
-      webService.saveCart();
+    public double calculatePayment(ShoppingCart cart) {
+        return webService.calculatePayment(cart);
     }
 
     @Override
-    public void getCartContent() {
- webService.getCartContent();
+    public void saveCart(ShoppingCart cart) {
+        webService.saveCart(cart);
     }
 
     @Override
-    public void createOrder() {
-       webService.createOrder();
+    public String getCartContent(ShoppingCart cart) {
+      return  webService.getCartContent(cart);
     }
+
+   
 
 }

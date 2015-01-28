@@ -7,8 +7,6 @@ package Model;
 
 import java.util.ArrayList;
 
-
-
 /**
  *
  * @author Frederic
@@ -33,8 +31,6 @@ public class WebUser {
         return state;
     }
 
-    
-
     public void setState(UserState state) {
         this.state = state;
     }
@@ -42,12 +38,19 @@ public class WebUser {
     public String getConfirmPassword() {
         return confirmPassword;
     }
+    public WebUser(){
+        friend=new ArrayList();
+        
+    }
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
 
-    public ShoppingCart getCart() {
+    public ShoppingCart getCart(){
+        if(cart==null){
+            cart=new ShoppingCart();
+        }
         return cart;
     }
 
@@ -61,8 +64,8 @@ public class WebUser {
         this.email = email;
         this.fullname = fullname;
         this.confirmPassword = confirm;
-        state= UserState.New;
-      friend=new ArrayList();
+        state = UserState.New;
+        friend = new ArrayList();
     }
 
     public Customer getCustomer() {
@@ -73,9 +76,7 @@ public class WebUser {
         this.customer = customer;
     }
 
-    public WebUser() {
-    friend=new ArrayList();
-    }
+   
 
     public String getLogin_id() {
         return login_id;
