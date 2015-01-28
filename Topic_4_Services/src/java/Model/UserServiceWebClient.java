@@ -22,33 +22,34 @@ public UserServiceWebClient(){
     }
 
     @Override
-    public void removeUser(Account u, String password, String confirmPassword) {
+    public void removeUser(WebUser u, String password, String confirmPassword) {
         webService.removeUser(u, password, confirmPassword);
     }
 
     @Override
-    public void modifiUser() {
-       webService.modifiUser();
+    public void modifiUser(WebUser u,String username, String password, String confirmPassword, String email, String fullname) {
+       webService.modifiUser(u,username,password,confirmPassword,email,fullname);
     }
 
     @Override
-    public Account getUser() {
+    public WebUser getUser() {
     return   webService.getUser();
     }
 
     @Override
-    public void addFriend() {
-       webService.addFriend();
+    public void addFriend(Friend u) {
+       webService.addFriend(u);
     }
 
     @Override
-    public void removeFriend() {
-    webService.removeFriend();
+    public void removeFriend(Friend u) {
+    webService.removeFriend(u);
     }
 
     @Override
-    public void addLikeToPhoto() {
-    webService.addLikeToPhoto();
+    public void addLikeToPhoto(Photo p) {
+    webService.addLikeToPhoto(p);
+    
     }
     
 }

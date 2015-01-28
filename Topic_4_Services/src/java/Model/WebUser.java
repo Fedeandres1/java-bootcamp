@@ -5,16 +5,47 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
+
+
 /**
  *
  * @author Frederic
  */
 public class WebUser {
+
+    private String login_id, password, email, fullname, confirmPassword;
+    protected UserState state;
+    private Customer customer;
+    private ShoppingCart cart;
+    private ArrayList<Friend> friend;
+
+    public ArrayList<Friend> getFriend() {
+        return friend;
+    }
+
+    public void setFriend(ArrayList<Friend> friend) {
+        this.friend = friend;
+    }
+
+    public UserState getState() {
+        return state;
+    }
+
     
-    String login_id,password,email,fullname;
-    UserState stateUser;
-    Customer customer;
-    ShoppingCart cart;
+
+    public void setState(UserState state) {
+        this.state = state;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
 
     public ShoppingCart getCart() {
         return cart;
@@ -24,17 +55,15 @@ public class WebUser {
         this.cart = cart;
     }
 
-    public WebUser(String login_id, String password, String email, String fullname, UserState stateUser, Customer customer, ShoppingCart cart) {
+    public WebUser(String login_id, String password, String confirm, String email, String fullname) {
         this.login_id = login_id;
         this.password = password;
         this.email = email;
         this.fullname = fullname;
-        this.stateUser = stateUser;
-        this.customer = customer;
-        this.cart = cart;
+        this.confirmPassword = confirm;
+        state= UserState.New;
+      friend=new ArrayList();
     }
-
-   
 
     public Customer getCustomer() {
         return customer;
@@ -44,9 +73,8 @@ public class WebUser {
         this.customer = customer;
     }
 
-    
-
     public WebUser() {
+    friend=new ArrayList();
     }
 
     public String getLogin_id() {
@@ -81,12 +109,4 @@ public class WebUser {
         this.fullname = fullname;
     }
 
-    public UserState getStateUser() {
-        return stateUser;
-    }
-
-    public void setStateUser(UserState stateUser) {
-        this.stateUser = stateUser;
-    }
-    
 }

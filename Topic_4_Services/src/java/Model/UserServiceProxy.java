@@ -23,33 +23,33 @@ public class UserServiceProxy implements UserService {
     }
 
     @Override
-    public void removeUser(Account u, String password, String confirmPassword) {
+    public void removeUser(WebUser u, String password, String confirmPassword) {
         implement.removeUser(u, password, confirmPassword);
     }
 
     @Override
-    public void modifiUser() {
-        implement.modifiUser();
+    public void modifiUser(WebUser u,String username, String password, String confirmPassword, String email, String fullname) {
+        implement.modifiUser(u,username,password,confirmPassword,email,fullname);
     }
 
     @Override
-    public Account getUser() {
+    public WebUser getUser() {
         return implement.getUser();
     }
 
     @Override
-    public void addFriend() {
-        implement.addFriend();
+    public void addFriend(Friend u) {
+        implement.addFriend(u);
     }
 
     @Override
-    public void removeFriend() {
-        implement.removeFriend();
+    public void removeFriend(Friend u) {
+        implement.removeFriend(u);
     }
 
     @Override
-    public void addLikeToPhoto() {
-        implement.addLikeToPhoto();
+    public void addLikeToPhoto(Photo p) {
+        implement.addLikeToPhoto(p);
     }
 
 }

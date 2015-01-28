@@ -20,32 +20,32 @@ public UserServiceJmsClient(){
     }
 
     @Override
-    public void removeUser(Account u, String password, String confirmPassword) {
+    public void removeUser(WebUser u, String password, String confirmPassword) {
        jmsObject.removeUser(u,password,confirmPassword);
     }
 
     @Override
-    public void modifiUser() {
-        jmsObject.modifiUser();
+    public void modifiUser(WebUser u,String username, String password, String confirmPassword, String email, String fullname) {
+        jmsObject.modifiUser(u,username,password,confirmPassword,email,fullname);
     }
 
     @Override
-    public Account getUser() {
+    public WebUser getUser() {
        return jmsObject.getUser();
     }
 
     @Override
-    public void addFriend() {
-        jmsObject.addFriend();
+    public void addFriend(Friend u) {
+        jmsObject.addFriend(u);
     }
 
     @Override
-    public void removeFriend() {
-      jmsObject.removeFriend();
+    public void removeFriend(Friend u) {
+      jmsObject.removeFriend(u);
     }
     @Override
-     public void addLikeToPhoto(){
-     jmsObject.addLikeToPhoto();
+     public void addLikeToPhoto(Photo p){
+     jmsObject.addLikeToPhoto(p);
          };
     
 }

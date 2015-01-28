@@ -9,14 +9,11 @@ package Model;
  *
  * @author Frederic
  */
-public class OrderState {
-    public enum State{
+public enum OrderState {
+    
         New,Hold,Shipped,Delivery,Closed;
         
-        
-    }
-
-    public OrderState() {
+     OrderState() {
     }
     
 }

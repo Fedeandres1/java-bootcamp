@@ -9,14 +9,23 @@ package Model;
  *
  * @author Frederic
  */
-public class UserState {
-    public enum State{
-        New,Active,Banned,Bloked
-        
-        
-    }
+public enum UserState {
+New,Bloked,Banned,Active;
+  
 
-    public UserState() {
-    }
+
+UserState(){
     
+    
+    
+    
+}
+
+
+
+
+
+
+
+
 }

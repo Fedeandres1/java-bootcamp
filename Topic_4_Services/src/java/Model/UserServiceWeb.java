@@ -17,33 +17,33 @@ UserService imp=new UserImplement();
     }
 
     @Override
-    public void removeUser(Account u, String password, String confirmPassword) {
+    public void removeUser(WebUser u, String password, String confirmPassword) {
         imp.removeUser(u,password,confirmPassword);
     }
 
     @Override
-    public void modifiUser() {
-        imp.modifiUser();
+    public void modifiUser(WebUser u,String username, String password, String confirmPassword, String email, String fullname) {
+        imp.modifiUser(u,username,password,confirmPassword,email,fullname);
     }
 
     @Override
-    public Account getUser() {
+    public WebUser getUser() {
        return imp.getUser();
     }
 
     @Override
-    public void addFriend() {
-      imp.addFriend();
+    public void addFriend(Friend u) {
+      imp.addFriend(u);
     }
 
     @Override
-    public void removeFriend() {
-     imp.removeFriend();
+    public void removeFriend(Friend u) {
+     imp.removeFriend(u);
     }
 
     @Override
-    public void addLikeToPhoto() {
-     imp.addLikeToPhoto();
+    public void addLikeToPhoto(Photo p) {
+     imp.addLikeToPhoto(p);
     }
     
     

@@ -11,23 +11,31 @@ package Model;
  */
 public interface UserService {
 
+    /**
+     *Create a new User
+     * @param username id_user
+     * @param password 
+     * @param confirmPassword
+     * @param email
+     * @param fullname
+     */ 
     public void createUser(String username,
             String password,
             String confirmPassword,
             String email,
             String fullname);
 
-    public void removeUser(Account u,
+    public void removeUser(WebUser u,
             String password,
             String confirmPassword);
 
-    public void modifiUser();
+    public void modifiUser(WebUser u,String username, String password, String confirmPassword, String email, String fullname);
 
-    public Account getUser();
+    public WebUser getUser();
 
-    public void addFriend();
+    public void addFriend(Friend u);
 
-    public void removeFriend();
-    public void addLikeToPhoto();
+    public void removeFriend(Friend u);
+    public void addLikeToPhoto(Photo p);
 
 }

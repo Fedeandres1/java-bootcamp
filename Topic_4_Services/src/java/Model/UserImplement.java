@@ -9,48 +9,60 @@ package Model;
  *
  * @author Frederic
  */
-public class UserImplement implements UserService{
+public class UserImplement implements UserService {
 
-    protected UserImplement(){
+    WebUser user=null;
+
+    protected UserImplement() {
         
     }
 
     @Override
     public void createUser(String username, String password, String confirmPassword, String email, String fullname) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        user = new WebUser(username, password, confirmPassword, email, fullname);
+
+    }
+
+    /**
+     * this method mark or eliminate the user in the database directly
+     *
+     * @param u
+     * @param password
+     * @param confirmPassword
+     */
+    @Override
+    public void removeUser(WebUser u, String password, String confirmPassword) {
+        u.state = UserState.Banned;
     }
 
     @Override
-    public void removeUser(Account u, String password, String confirmPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void modifiUser(WebUser user, String username, String password, String confirmPassword, String email, String fullname) {
+        user.setFullname(fullname);
+        user.setEmail(email);
+        user.setLogin_id(username);
+        user.setPassword(password);
+        user.setConfirmPassword(confirmPassword);
     }
 
     @Override
-    public void modifiUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public WebUser getUser() {
+
+        return user;
     }
 
     @Override
-    public Account getUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addFriend(Friend u) {
+        user.getFriend().add(u);
     }
 
     @Override
-    public void addFriend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeFriend(Friend u) {
+        user.getFriend().remove(u);
     }
 
     @Override
-    public void removeFriend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addLikeToPhoto(Photo p) {
+        p.incrementLikes();
     }
 
-    @Override
-    public void addLikeToPhoto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-
-   
-    
 }
