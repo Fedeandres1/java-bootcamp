@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class OperationDB {
 
     public Object [][] select(String table, String fields, String where, String orderby, Connection con) {
-        int registros=0;
+        int record=0;
         String colname[] = fields.split(",");
        
         //Consultas SQL
@@ -26,21 +26,23 @@ public class OperationDB {
             q2+= " WHERE " + where;
         }
         if(orderby.compareTo("")!=0){
-        q+= " ORDER BY "+orderby; //Lo ordena por nombre y apellido
+        q+= " ORDER BY "+orderby; //Order by the orderby value in the head of the method
         }
         try{ 
             PreparedStatement pstm = con.prepareStatement(q2);
             ResultSet res= pstm.executeQuery();
             res.next();
-            registros =res.getInt("total");
+            record =res.getInt("total");
             res.close();
             
             
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
         }
-        //Se crea una matriz con tantas filas y columnas que necesite
-        Object [][] data = new String[registros][fields.split(",").length];
+        //Create a matrix with many row and colum we needed, look the record variable it count the many row of the table in the
+        //data base and the fields.split separate the colum introducen in the head method(fields), then create
+        // the matrix with this values.
+        Object [][] data = new String[record][fields.split(",").length];
         //realizamos la consulta sql y llenamos los datos en la matriz "Object"
         try{
             PreparedStatement pstm= con.prepareStatement(q);
@@ -63,7 +65,7 @@ public class OperationDB {
     }
 
     public boolean insert(String table, String fields, String values, Connection con) {
-
+//this method is simple create the query in string q and execute.
         boolean res = false;
         //se arma la consulta
         String q = " INSERT INTO " + table + " ( " + fields + " ) VALUES ( " + values + ")";
@@ -80,7 +82,7 @@ public class OperationDB {
         return res;
 
     }
-
+//create the query and execute
     public boolean delete(String table, String where, Connection con) {
         boolean res = false;
         String q = " DELETE FROM " + table + " WHERE " + where;
@@ -96,7 +98,7 @@ public class OperationDB {
         return res;
 
     }
-
+//create the query and execute 
     public boolean Update(String table, String change, String where, Connection con) {
         boolean res = false;
 
