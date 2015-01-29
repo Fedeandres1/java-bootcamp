@@ -7,14 +7,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Connect to the data base
  * @author Federico
  */
 public class ConnectionDB {
 
     private Connection connect = null;
    
-    public Connection AccederBD() {
+    public Connection accessBD() {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -34,8 +34,8 @@ public class ConnectionDB {
         return connect;
 
     }
-
-    public void cerracon() {
+//close the database
+    public void closeCon() {
         try {
 
             connect.close();
@@ -46,7 +46,7 @@ public class ConnectionDB {
 
     }
 
-    //This method is for sepond the topic 5
+    
     
 
     

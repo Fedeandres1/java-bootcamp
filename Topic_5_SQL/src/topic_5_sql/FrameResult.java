@@ -160,7 +160,7 @@ public class FrameResult extends javax.swing.JFrame {
         where += " and STUDENTXCOURSEXNOTA.id_course=COURSE.id_course ";
         try {
 
-            result = operation.select(tabla, fields, where, orderby, conn.AccederBD());
+            result = operation.select(tabla, fields, where, orderby, conn.accessBD());
 
             if (result != null) {
                 for (int i = 0; i < result.length; i++) {
@@ -173,11 +173,11 @@ public class FrameResult extends javax.swing.JFrame {
 
                 this.txt_area.setText(res.toString());
             }
-            conn.cerracon();
+            conn.closeCon();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, error);
         } finally {
-            conn.cerracon();
+            conn.closeCon();
         }
 
 
@@ -211,7 +211,7 @@ public class FrameResult extends javax.swing.JFrame {
 
         try {
 
-            result = operation.select(tabla, fields, where, orderby, conn.AccederBD());
+            result = operation.select(tabla, fields, where, orderby, conn.accessBD());
 
             if (result != null) {
                 for (int i = 0; i < result.length; i++) {
@@ -221,11 +221,11 @@ public class FrameResult extends javax.swing.JFrame {
 
                 this.txt_area.setText(res.toString());
             }
-            conn.cerracon();
+            conn.closeCon();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, error);
         } finally {
-            conn.cerracon();
+            conn.closeCon();
         }
 
 
