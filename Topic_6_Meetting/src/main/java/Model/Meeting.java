@@ -87,4 +87,9 @@ public class Meeting {
         this.schedule = schedule;
     }
 
+    @Override
+    public String toString() {
+        return "Meeting{" + "room=" + room + ", attendee=" + attendee + ", schedule=" + schedule + '}';
+    }
+
 }

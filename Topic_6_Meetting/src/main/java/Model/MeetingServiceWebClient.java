@@ -9,6 +9,39 @@ package Model;
  *
  * @author Frederic
  */
-public class MeetingServiceWebClient {
+public class MeetingServiceWebClient implements MeetingService{
+MeetingService webService;
+
+
+
+ public MeetingServiceWebClient() {
+     
+     //webService
+     
+    }
+
+
+    @Override
+    
+    public void createMeeting() {
+       webService.createMeeting();
+    }
+
+   
+
+    @Override
+    public void updateMeeting() {
+       webService.updateMeeting();
+    }
+
+    @Override
+    public void removeMeeting() {
+      webService.removeMeeting();
+    }
+
+    @Override
+    public void consultMeeting() {
+       webService.consultMeeting();
+    }
     
 }

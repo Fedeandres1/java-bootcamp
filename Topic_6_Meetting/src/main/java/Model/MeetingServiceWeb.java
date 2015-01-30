@@ -9,6 +9,33 @@ package Model;
  *
  * @author Frederic
  */
-public class MeetingServiceWeb {
+public class MeetingServiceWeb implements MeetingService{
+MeetingService imp=new MeetingServiceImp();
+    
+    
+    
+    @Override
+    public void createMeeting() {
+     imp.createMeeting();
+    }
+
+    @Override
+    public void updateMeeting() {
+       imp.updateMeeting();
+    }
+
+    @Override
+    public void removeMeeting() {
+     imp.removeMeeting();
+    }
+
+    @Override
+    public void consultMeeting() {
+      imp.consultMeeting();
+    }
+    
+    
+    
+    
     
 }

@@ -9,6 +9,31 @@ package Model;
  *
  * @author Frederic
  */
-public class MeetingServiceJmsClient {
+public class MeetingServiceJmsClient implements MeetingService{
+    MeetingService jmsObject;
+
+    public MeetingServiceJmsClient() {
+        //jmsObject;
+    }
+
+    @Override
+    public void createMeeting() {
+       jmsObject.createMeeting();
+    }
+
+    @Override
+    public void updateMeeting() {
+       jmsObject.updateMeeting();
+    }
+
+    @Override
+    public void removeMeeting() {
+       jmsObject.removeMeeting();
+    }
+
+    @Override
+    public void consultMeeting() {
+       jmsObject.consultMeeting();
+    }
     
 }

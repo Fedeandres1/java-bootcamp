@@ -10,13 +10,13 @@ package Model;
  * @author Frederic
  */
 public interface MeetingService {
+
     public void createMeeting();
+
     public void updateMeeting();
+
     public void removeMeeting();
+
     public void consultMeeting();
-    
-    
-    
-    
-    
+
 }

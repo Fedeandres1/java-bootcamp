@@ -12,9 +12,11 @@ import java.util.ArrayList;
  * @author Frederic
  */
 public class SchedulerMeeting {
-  private  ArrayList meeting;
+
+    private ArrayList meeting;
 
     public SchedulerMeeting() {
+        meeting = new ArrayList();
     }
 
     public SchedulerMeeting(ArrayList meeting) {
@@ -28,5 +30,23 @@ public class SchedulerMeeting {
     public void setMeeting(ArrayList meeting) {
         this.meeting = meeting;
     }
-    
+
+    public void addSchedulerMeeting(Meeting m) {
+        if (meeting == null) {
+            meeting = new ArrayList();
+        }
+        meeting.add(m);
+
+    }
+
+    public void removeSchedulerMeeting(Meeting m) {
+        meeting.remove(m);
+
+    }
+
+    @Override
+    public String toString() {
+        return "SchedulerMeeting{" + "meeting=" + meeting + '}';
+    }
+
 }

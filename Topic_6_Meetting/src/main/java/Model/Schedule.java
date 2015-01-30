@@ -48,5 +48,10 @@ public class Schedule {
     public void setHour_to(String hour_to) {
         this.hour_to = hour_to;
     }
+
+    @Override
+    public String toString() {
+        return "Schedule{" + "day=" + day + ", hour_from=" + hour_from + ", hour_to=" + hour_to + '}';
+    }
     
 }

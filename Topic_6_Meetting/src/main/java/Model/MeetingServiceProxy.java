@@ -9,6 +9,34 @@ package Model;
  *
  * @author Frederic
  */
-public class MeetingServiceProxy {
+public class MeetingServiceProxy implements MeetingService{
+    MeetingService implementation;  
+  
+    protected MeetingServiceProxy(MeetingService imp) {  
+        this.implementation = imp;  
+    }  
+
+    @Override
+    public void createMeeting() {
+        implementation.createMeeting();
+    }
+
+    @Override
+    public void updateMeeting() {
+        implementation.updateMeeting();
+    }
+
+    @Override
+    public void removeMeeting() {
+        implementation.removeMeeting();
+    }
+
+    @Override
+    public void consultMeeting() {
+      implementation.consultMeeting();
+    }
+    
+    
+    
     
 }

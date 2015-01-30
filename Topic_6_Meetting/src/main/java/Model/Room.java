@@ -46,5 +46,10 @@ public class Room {
     public void setZone(String zone) {
         this.zone = zone;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" + "number=" + number + ", floor=" + floor + ", zone=" + zone + '}';
+    }
     
 }

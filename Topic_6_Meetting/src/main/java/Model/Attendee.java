@@ -87,4 +87,9 @@ private int cel_phone;
         this.cel_phone = cel_phone;
     }
 
+    @Override
+    public String toString() {
+        return "Attendee{" + "first_name=" + first_name + ", last_name=" + last_name + ", email=" + email + ", id_employee=" + id_employee + ", dni=" + dni + ", telephone=" + telephone + ", cel_phone=" + cel_phone + '}';
+    }
+
 }
