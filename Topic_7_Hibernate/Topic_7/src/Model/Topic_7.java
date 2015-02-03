@@ -39,14 +39,15 @@ public class Topic_7 {
          operation.closeConnection();
          
         operation.openConnection();
-        operation.fetchStudent();
+        System.out.println(operation.fetchCourse());
         operation.closeConnection();
+
         
+         operation.openConnection();
+         System.out.println(operation.fetchCourse());
+         operation.closeConnection();*/
         operation.openConnection();
-        operation.fetchStudent();
-        operation.closeConnection();*/
-        operation.openConnection();
-        operation.fetchCoursesOfStudent(3);
+        System.out.println(operation.fetchStudentsOfCourse(2));
         operation.closeConnection();
     }
 

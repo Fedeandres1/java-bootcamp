@@ -7,6 +7,7 @@ package Model;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -15,13 +16,15 @@ import javax.persistence.Id;
  */
 @Entity
 public class Teacher {
+
     @Id
+    @GeneratedValue
     private int id_teacher;
-    private String last_name,first_name;
+    private String last_name, first_name;
     private Date date_birth;
 
-    public Teacher( String last_name, String first_name, Date date_of_birth) {
-       
+    public Teacher(String last_name, String first_name, Date date_of_birth) {
+
         this.last_name = last_name;
         this.first_name = first_name;
         this.date_birth = date_of_birth;
@@ -60,11 +63,11 @@ public class Teacher {
 
     public void setDate_of_birth(Date date_of_birth) {
         this.date_birth = date_of_birth;
-    } 
+    }
+
     @Override
     public String toString() {
-        return "Teacher{" + "id_teacher=" + id_teacher + ", last_name=" + last_name + ", first_name=" + first_name + ", date_of_birth=" + date_birth + '}'+"\n";
+        return "Teacher{" + "id_teacher=" + id_teacher + ", last_name=" + last_name + ", first_name=" + first_name + ", date_of_birth=" + date_birth + '}' + "\n";
     }
-    
-    
+
 }

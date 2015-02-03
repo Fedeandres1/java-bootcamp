@@ -5,7 +5,9 @@
  */
 package Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -16,16 +18,19 @@ import javax.persistence.Id;
 public class Course {
 
     @Id
+    @GeneratedValue
     private int id_course;
+    @Column(nullable = true)
     private String name;
-     
-    private int id_teacher;
-    private int hour_week;
+    @Column(nullable = true)
+    private Integer id_teacher;
+    @Column(nullable = true)
+    private Integer hour_week;
 
     public Course() {
     }
 
-    public Course(String name, int id_teacher, int hour_week) {
+    public Course(String name, Integer id_teacher, Integer hour_week) {
 
         this.name = name;
         this.id_teacher = id_teacher;
@@ -52,7 +57,7 @@ public class Course {
         return id_teacher;
     }
 
-    public void setId_teacher(int id_teacher) {
+    public void setId_teacher(Integer id_teacher) {
         this.id_teacher = id_teacher;
     }
 
@@ -60,7 +65,7 @@ public class Course {
         return hour_week;
     }
 
-    public void setHour_week(int hour_week) {
+    public void setHour_week(Integer hour_week) {
         this.hour_week = hour_week;
     }
 

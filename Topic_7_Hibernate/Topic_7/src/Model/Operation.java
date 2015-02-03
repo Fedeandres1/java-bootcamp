@@ -7,6 +7,7 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -46,9 +47,9 @@ public class Operation {
 
     public String fetchTeacher() {
         String res = null;
-        List result = session.createQuery("  Teacher").list();
+        List result = session.createQuery(" from Teacher").list();
         for (Teacher event : (List<Teacher>) result) {
-            res += event.toString();
+            res += event.toString() + "\n";
         }
 
         return res;
@@ -58,7 +59,7 @@ public class Operation {
         String res = null;
         List<Student> result = session.createQuery("from Student").list();
         for (Student event : (List<Student>) result) {
-            res += event.getFirst_name() + ", " + event.getLast_name();
+            res += event.toString() + "\n";
         }
 
         return res;
@@ -67,9 +68,11 @@ public class Operation {
 
     public String fetchCourse() {
         String res = null;
-        List<Course> result = session.createQuery("from Course").list();
-        for (Course event : (List<Course>) result) {
-            res += event.toString();
+        List<Course> result = null;
+        Query query = session.createQuery(" from Course ");
+        result = query.list();
+        for (int i = 0; i < result.size(); i++) {
+            res += result.get(i).toString();
         }
 
         return res;
@@ -78,23 +81,33 @@ public class Operation {
 
     public String fetchCoursesOfStudent(int id_student) {
         String res = null;
-        ArrayList array = new ArrayList();
-        List<StudentXCourseXNota> result = session.createQuery("from "
-                + "StudentXCourseXNota where id_student="
-                + id_student
-        ).list();
-        
-        List<Course> result2 = session.createQuery("from Course ").list();
 
-        for (Course event : (List<Course>) result2) {
+        List<Course> result = session.createQuery("select c from "
+                + "StudentXCourseXNota s,Course c  where s.id_student="
+                + id_student
+                + " and  s.id_course=c.id_course"
+        ).list();
+
+        for (Course event : (List<Course>) result) {
             res += event.toString();
         }
 
         return res;
     }
 
-    public String fetchStudentsOfCourse() {
+    public String fetchStudentsOfCourse(int id_course) {
         String res = null;
+        List<Student> result;
+        Query query = session.createQuery(" Select s "
+                + " from Student s , StudentXCourseXNota s2 "
+                + " where s2.id_course=" + id_course
+                + " and s.id_registration=s2.id_student");
+        result = query.list();
+        for (Student student : (List<Student>) result) {
+
+            res += student.toString();
+
+        }
 
         return res;
     }
