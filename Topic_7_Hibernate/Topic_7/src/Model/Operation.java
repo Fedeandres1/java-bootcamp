@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -42,12 +44,59 @@ public class Operation {
 
     }
 
-    public void fetchCoursesOfStudent() {
-        
+    public String fetchTeacher() {
+        String res = null;
+        List result = session.createQuery("  Teacher").list();
+        for (Teacher event : (List<Teacher>) result) {
+            res += event.toString();
+        }
+
+        return res;
     }
 
-    public void fetchStudentsOfCourse() {
+    public String fetchStudent() {
+        String res = null;
+        List<Student> result = session.createQuery("from Student").list();
+        for (Student event : (List<Student>) result) {
+            res += event.getFirst_name() + ", " + event.getLast_name();
+        }
+
+        return res;
+
+    }
+
+    public String fetchCourse() {
+        String res = null;
+        List<Course> result = session.createQuery("from Course").list();
+        for (Course event : (List<Course>) result) {
+            res += event.toString();
+        }
+
+        return res;
+
+    }
+
+    public String fetchCoursesOfStudent(int id_student) {
+        String res = null;
+        ArrayList array = new ArrayList();
+        List<StudentXCourseXNota> result = session.createQuery("from "
+                + "StudentXCourseXNota where id_student="
+                + id_student
+        ).list();
         
+        List<Course> result2 = session.createQuery("from Course ").list();
+
+        for (Course event : (List<Course>) result2) {
+            res += event.toString();
+        }
+
+        return res;
+    }
+
+    public String fetchStudentsOfCourse() {
+        String res = null;
+
+        return res;
     }
 
 }

@@ -18,6 +18,7 @@ public class Course {
     @Id
     private int id_course;
     private String name;
+     
     private int id_teacher;
     private int hour_week;
 
@@ -65,7 +66,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" + "id_course=" + id_course + ", name=" + name + ", id_teacher=" + id_teacher + ", hour_week=" + hour_week + '}';
+        return "Course{" + "id_course=" + id_course + ", name=" + name + ", id_teacher=" + id_teacher + ", hour_week=" + hour_week + '}' + "\n";
     }
 
 }

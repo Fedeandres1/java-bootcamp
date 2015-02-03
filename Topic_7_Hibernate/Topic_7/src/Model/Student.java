@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -18,9 +19,9 @@ public class Student {
     @Id
     private int id_registration;
     private String first_name, last_name;
-    private String date_birth;
+    private Date date_birth;
 
-    public Student(String first_name, String last_name, String date_birth) {
+    public Student(String first_name, String last_name, Date date_birth) {
 
         this.first_name = first_name;
         this.last_name = last_name;
@@ -54,17 +55,17 @@ public class Student {
         this.last_name = last_name;
     }
 
-    public String getDate_birth() {
+    public Date getDate_birth() {
         return date_birth;
     }
 
-    public void setDate_birth(String date_birth) {
+    public void setDate_birth(Date date_birth) {
         this.date_birth = date_birth;
     }
 
     @Override
     public String toString() {
-        return "Student{" + "id_registration=" + id_registration + ", first_name=" + first_name + ", last_name=" + last_name + ", date_birth=" + date_birth + '}';
+        return "Student{" + "id_registration=" + id_registration + ", first_name=" + first_name + ", last_name=" + last_name + ", date_birth=" + date_birth + '}' + "\n";
     }
 
 }

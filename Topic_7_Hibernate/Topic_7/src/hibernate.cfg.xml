@@ -30,6 +30,8 @@
  		 <mapping class="Model.Student"/>
  		<mapping class="Model.Course"/>
                 <mapping class="Model.Teacher"/>
+                 <mapping class="Model.StudentXCourseXNota"/>
+                 
  		 
     </session-factory>
 </hibernate-configuration>

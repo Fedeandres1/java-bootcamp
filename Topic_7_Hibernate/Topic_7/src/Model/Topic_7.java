@@ -7,6 +7,7 @@ package Model;
 
 import Model.Operation;
 import Model.Student;
+import java.util.Date;
 
 /**
  *
@@ -16,19 +17,36 @@ public class Topic_7 {
 
     private static Operation operation = null;
 
-    /** This is the test class we save a teacher a student and a course
+    /**
+     * This is the test class we save a teacher a student and a course
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         operation = new Operation();
-        Student student = new Student("Federico", "Solterman", "1990-10-26");
+        Student student = new Student("Federico", "Solterman", new Date());
 
-        Teacher teacher = new Teacher("Anacleto", "Antonia", "1850-02-15");
+        Teacher teacher = new Teacher("Anacleto", "Antonia", new Date());
         Course course = new Course("Español", 12, 5);
+        /* operation.openConnection();
+         operation.saveObject(student);
+         operation.saveObject(teacher);
+         operation.saveObject(course);
+         operation.closeConnection();
+         
+         operation.openConnection();
+         operation.fetchTeacher();
+         operation.closeConnection();
+         
         operation.openConnection();
-        operation.saveObject(student);
-        operation.saveObject(teacher);
-        operation.saveObject(course);
+        operation.fetchStudent();
+        operation.closeConnection();
+        
+        operation.openConnection();
+        operation.fetchStudent();
+        operation.closeConnection();*/
+        operation.openConnection();
+        operation.fetchCoursesOfStudent(3);
         operation.closeConnection();
     }
 
