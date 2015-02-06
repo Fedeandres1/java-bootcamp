@@ -1,0 +1,49 @@
+1)
+Fisrt install the mongoDB with the installer locating in the http://www.mongodb.org/ the official web page
+Start the mongodb with the mongod.exe in the directory of instalation bin
+start the prompt shell of mongo with mongo.exe 
+follow this step in the prompt
+mongo
+db
+show db
+use high_school
+> db
+high_school
+> teacher_id=ObjectId()
+ObjectId("54d4012b320dee697f903bd2")
+> course_id=ObjectId()
+ObjectId("54d4016b320dee697f903bd3")
+> student_id=ObjectId()
+ObjectId("54d40177320dee697f903bd4")
+> db.student.insert({"id_registration":student_id,"first_name":"Federico","last_
+name":"Solterman","date_birth":"26-10-1990"})
+WriteResult({ "nInserted" : 1 })
+> db.teacher.insert({"id_teacher":teacher_id,"first_name":"Antonia","last_name":
+"Sulma","date_birth":"20-05-1985"})
+WriteResult({ "nInserted" : 1 })
+> db.course.insert({"id_course":course_id,"name":"Ingles","id_teacher":teacher_i
+d,"hour_week":3})
+WriteResult({ "nInserted" : 1 })
+> db.studentxcoursexnote.insert({"id_student":student_id,"id_course":course_id,"
+note_1":6,"note_2":8,"note_3":10,"note_final":8})
+WriteResult({ "nInserted" : 1 })
+> db.teacherxcourse.insert({"id_teacher":teacher_id,"id_course":course_id})
+WriteResult({ "nInserted" : 1 })
+> db.schedulerxcourse.insert({"day":"10-05-2015","hour_from":"15:00","hour_to":"
+16:00","id_course":course_id})
+WriteResult({ "nInserted" : 1 })
+2) Save the id_object into student 
+> var student= db.studentxcoursexnote.find(  { $and: [{ note_1: {$gt:4 }, not
+e_2: {$gt:4}, note_3: {$gt:4},note_final:{$gt:4  } } ] }  )
+>while(student.hasNext()){ var stu=student.next(); db.student.find ({id_registration:student.id_student})}
+3)> var teacher= db.teacher.find(  { $and: [{ first_name: "Federico" },  {last_name:"Solterman"} ] }  )
+>while(teacher.hasNext()){
+var tea=teacher.next();
+db.teacherxcourse.find({id_teacher:teacher.id_student})}
+
+
+
+
+
+
+

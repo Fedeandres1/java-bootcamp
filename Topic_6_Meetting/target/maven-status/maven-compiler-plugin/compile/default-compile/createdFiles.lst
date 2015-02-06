@@ -1,9 +1,7 @@
-Model\MeetingService.class
 Model\MeetingServiceJmsClient.class
-com\tutorialspoint\HelloWorld.class
-com\tutorialspoint\MainApp.class
 Model\MeetingServiceWeb.class
+Model\MeetingServiceWebClient.class
+Model\MeetingService.class
 Model\MeetingServiceFactory.class
 Model\MeetingServiceProxy.class
-Model\MeetingServiceWebClient.class
 Model\MeetingServiceImp.class
