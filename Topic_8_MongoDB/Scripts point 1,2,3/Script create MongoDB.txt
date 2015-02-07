@@ -35,11 +35,11 @@ WriteResult({ "nInserted" : 1 })
 2) Save the id_object into student 
 > var student= db.studentxcoursexnote.find(  { $and: [{ note_1: {$gt:4 }, not
 e_2: {$gt:4}, note_3: {$gt:4},note_final:{$gt:4  } } ] }  )
->while(student.hasNext()){ var stu=student.next(); db.student.find ({id_registration:student.id_student})}
-3)> var teacher= db.teacher.find(  { $and: [{ first_name: "Federico" },  {last_name:"Solterman"} ] }  )
+>while(student.hasNext()){ var stu=student.next(); db.student.findOne ({id_registration:student.id_student})}
+3)> var teacher= db.teacher.find(  { $and: [{ first_name: "Federico" },  {last_name:"Solterman"} ] }  ).sort( { first_name:1 } )
 >while(teacher.hasNext()){
 var tea=teacher.next();
-db.teacherxcourse.find({id_teacher:teacher.id_student})}
+db.teacherxcourse.findOne({id_teacher:teacher.id_student})}
 
 
 

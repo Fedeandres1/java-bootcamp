@@ -1,0 +1,8 @@
+com\mycompany\springmongodb\SpringMongoConfig.class
+model\Course.class
+model\Student.class
+model\Teacher.class
+model\TeacherXCourse.class
+model\SchedulerXCourse.class
+core\App.class
+model\StudentXCourseXNote.class
