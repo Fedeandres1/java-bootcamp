@@ -5,19 +5,20 @@ public class UserServiceWebClient implements UserService {
 
 	public UserServiceWebClient() {
 
-		// webService=
+		webService = new UserServiceWeb();
 
 	}
 
 	@Override
-	public void createUser(WebUser user) {
-		// TODO Auto-generated method stub
+	public void createUser(WebUser user, Phone p) {
+		webService.createUser(user, p);
 
 	}
 
 	@Override
 	public void loginUser(String id_user, String pass) {
-		// TODO Auto-generated method stub
+
+		webService.loginUser(id_user, pass);
 
 	}
 

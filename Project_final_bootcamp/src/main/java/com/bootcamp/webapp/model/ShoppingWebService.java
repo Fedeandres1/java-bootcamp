@@ -1,8 +1,14 @@
 package com.bootcamp.webapp.model;
 
+import javax.jws.WebService;
+
+@WebService
 public class ShoppingWebService implements ShoppingCartService {
 	ShoppingCartService imp = new ShoppingCartImplement();
-
+ 
+	
+	
+	
 	@Override
 	public void buyProduct() {
 		// TODO Auto-generated method stub

@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bootcamp.webapp.model.Operation;
-import com.bootcamp.webapp.model.Phone;
-import com.bootcamp.webapp.model.WebUser;
+import com.bootcamp.webapp.model.*;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	Operation operation = null;
+	UserService userService = null;
+	UserServiceFactory userServiceFactoy = null;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -51,7 +50,7 @@ public class HomeController {
 	@RequestParam("email") String email,
 
 	@RequestParam("phone") String phone) {
-
+		String query;
 		boolean res = false;
 
 		ArrayList<String> a;
@@ -66,19 +65,16 @@ public class HomeController {
 			mvc = new ModelAndView("register");
 			mvc.addObject("message", "Please insert the fields correctly");
 		} else {
-			WebUser webuser = new WebUser();
-			webuser.setId_user(id_user);
-			webuser.setPassword(pass);
-			webuser.setEmail(email);
+			WebUser webUser = new WebUser();
+			webUser.setId_user(id_user);
+			webUser.setPassword(pass);
+			webUser.setEmail(email);
 
-			Phone numberPhone = new Phone();
-			numberPhone.setNumber(Integer.parseInt(phone));
-			operation = new Operation();
-			operation.openConnection();
-			operation.saveObject(numberPhone);
-			webuser.setId_phone(numberPhone.getId_phone());
-			operation.saveObject(webuser);
-			operation.closeConnection();
+			Phone telephone = new Phone();
+			telephone.setNumber(Integer.parseInt(phone));
+
+			userService = userServiceFactoy.getRemoteServiceUsingWebService();
+			userService.createUser(webUser, telephone);
 
 			mvc = new ModelAndView("home");
 			mvc.addObject("message", "The registration is Ok - Welcome "
@@ -88,6 +84,7 @@ public class HomeController {
 		return mvc;
 	}
 
+	// This method should place in other clase
 	private boolean ifNotEmpty(ArrayList<String> array) {
 		boolean res = false;
 		ArrayList<String> a = array;

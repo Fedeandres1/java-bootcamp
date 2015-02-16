@@ -1,6 +1,5 @@
 package com.bootcamp.webapp.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,16 +7,20 @@ import javax.persistence.Id;
 public class WebUser {
 	@Id
 	private String id_user;
-	@Column(nullable = false)
+
 	private String password;
+
 	private String user_state;
-	@Column(nullable = false)
+
 	private String email;
-	@Column(nullable = false)
+
 	private int id_phone;
+
 	private int id_adress;
+
 	private String id_account;
-	private int shoppingcart;
+
+	private int id_shopping_cart;
 
 	public WebUser() {
 	}
@@ -33,7 +36,7 @@ public class WebUser {
 		this.id_phone = id_phone;
 		this.id_adress = id_adress;
 		this.id_account = id_account;
-		this.shoppingcart = shoppingcart;
+		this.id_shopping_cart = shoppingcart;
 	}
 
 	@Override
@@ -42,7 +45,7 @@ public class WebUser {
 				+ ", user_state=" + user_state + ", email=" + email
 				+ ", id_phone=" + id_phone + ", id_adress=" + id_adress
 				+ ", id_account=" + id_account + ", shoppingcart="
-				+ shoppingcart + "]";
+				+ this.id_shopping_cart + "]";
 	}
 
 	public String getId_user() {
@@ -101,12 +104,12 @@ public class WebUser {
 		this.id_account = id_account;
 	}
 
-	public int getShoppingcart() {
-		return shoppingcart;
+	public int getId_shopping_cart() {
+		return id_shopping_cart;
 	}
 
-	public void setShoppingcart(int shoppingcart) {
-		this.shoppingcart = shoppingcart;
+	public void setId_shopping_cart(int id_shopping_cart) {
+		this.id_shopping_cart = id_shopping_cart;
 	}
 
 }

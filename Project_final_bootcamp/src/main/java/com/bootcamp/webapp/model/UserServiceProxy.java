@@ -9,9 +9,9 @@ public class UserServiceProxy implements UserService {
 	}
 
 	@Override
-	public void createUser(WebUser user) {
-		
-		implement.createUser(user);
+	public void createUser(WebUser user, Phone p) {
+
+		implement.createUser(user, p);
 
 	}
 

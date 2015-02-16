@@ -4,27 +4,20 @@ public class ShoppingServiceProxy implements ShoppingCartService {
 
 	ShoppingCartService implement;
 
-	
-	
-	
-	public ShoppingServiceProxy(ShoppingJmsClient shoppingJmsClient) {
-		// TODO Auto-generated constructor stub
-	}
+	protected ShoppingServiceProxy(ShoppingCartService imp) {
+		this.implement = imp;
 
-	public ShoppingServiceProxy(
-			ShoppingWebServiceClient shoppingWebServiceClient) {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void buyProduct() {
-		// TODO Auto-generated method stub
+		implement.buyProduct();
 
 	}
 
 	@Override
 	public ShoppingCart addLineItem() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

@@ -4,9 +4,14 @@ public class ShoppingWebServiceClient implements ShoppingCartService {
 
 	ShoppingCartService webService;
 
+	public ShoppingWebServiceClient() {
+
+		this.webService = new ShoppingWebService();
+	}
+
 	@Override
 	public void buyProduct() {
-		// TODO Auto-generated method stub
+		webService.buyProduct();
 
 	}
 

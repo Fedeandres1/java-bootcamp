@@ -8,7 +8,7 @@ public class UserServiceJmsClient implements UserService {
 	}
 
 	@Override
-	public void createUser(WebUser user) {
+	public void createUser(WebUser user, Phone p) {
 		// TODO Auto-generated method stub
 
 	}
