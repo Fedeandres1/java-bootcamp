@@ -46,10 +46,12 @@ body {
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right" role="form" method="POST">
 					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
+						<input type="text" placeholder="User" class="form-control"
+							name="id_user">
 					</div>
 					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
+						<input type="password" placeholder="Password" class="form-control"
+							name="password">
 					</div>
 					<button type="submit" class="btn btn-success">Login</button>
 					<a class="btn btn-success" href="register">Register</a>

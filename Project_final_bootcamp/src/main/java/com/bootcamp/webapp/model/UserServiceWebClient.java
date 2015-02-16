@@ -16,9 +16,9 @@ public class UserServiceWebClient implements UserService {
 	}
 
 	@Override
-	public void loginUser(String id_user, String pass) {
+	public boolean loginUser(String id_user, String pass) {
 
-		webService.loginUser(id_user, pass);
+		return webService.loginUser(id_user, pass);
 
 	}
 

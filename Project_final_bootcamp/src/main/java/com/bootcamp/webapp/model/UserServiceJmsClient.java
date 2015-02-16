@@ -14,8 +14,8 @@ public class UserServiceJmsClient implements UserService {
 	}
 
 	@Override
-	public void loginUser(String id_user, String pass) {
-		// TODO Auto-generated method stub
+	public boolean loginUser(String id_user, String pass) {
+		return false;
 
 	}
 

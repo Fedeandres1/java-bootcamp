@@ -13,8 +13,8 @@ public class UserServiceWeb implements UserService {
 	}
 
 	@Override
-	public void loginUser(String id_user, String pass) {
-		imp.loginUser(id_user, pass);
+	public boolean loginUser(String id_user, String pass) {
+		return imp.loginUser(id_user, pass);
 
 	}
 

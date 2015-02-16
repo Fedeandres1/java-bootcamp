@@ -16,8 +16,8 @@ public class UserServiceProxy implements UserService {
 	}
 
 	@Override
-	public void loginUser(String id_user, String pass) {
-		implement.loginUser(id_user, pass);
+	public boolean loginUser(String id_user, String pass) {
+		return implement.loginUser(id_user, pass);
 
 	}
 

@@ -21,12 +21,6 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ModelAndView loginOk() {
-		ModelAndView mvc = new ModelAndView("loginOk");
-
-		return mvc;
-	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home() {
@@ -39,6 +33,27 @@ public class HomeController {
 	public ModelAndView register() {
 
 		ModelAndView mvc = new ModelAndView("register");
+		return mvc;
+	}
+
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public ModelAndView login(@RequestParam("id_user") String id_user,
+			@RequestParam("password") String password) {
+		boolean res = false;
+		ModelAndView mvc = null;
+		userService = userServiceFactoy.getRemoteServiceUsingWebService();
+		res = userService.loginUser(id_user, password);
+		if (res) {
+
+			mvc = new ModelAndView("loginOk");
+			mvc.addObject("message", "Welcome - " + id_user
+					+ " have a nice day!");
+		} else {
+			mvc = new ModelAndView("home");
+			mvc.addObject("message",
+					"User or Password invalidate, please insert a correct one");
+		}
+
 		return mvc;
 	}
 

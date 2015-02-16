@@ -1,5 +1,6 @@
 package com.bootcamp.webapp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,30 +8,30 @@ import javax.persistence.Id;
 public class WebUser {
 	@Id
 	private String id_user;
-
-	private String password;
-
+	@Column(nullable = false)
+	private String user_password;
+	@Column(nullable = true)
 	private String user_state;
-
+	@Column(nullable = false)
 	private String email;
-
-	private int id_phone;
-
-	private int id_adress;
-
+	@Column(nullable = false)
+	private Integer id_phone;
+	@Column(nullable = true)
+	private Integer id_adress;
+	@Column(nullable = true)
 	private String id_account;
-
-	private int id_shopping_cart;
+	@Column(nullable = true)
+	private Integer id_shopping_cart;
 
 	public WebUser() {
 	}
 
 	public WebUser(String id_user, String password, String user_state,
-			String email, int id_phone, int id_adress, String id_account,
-			int shoppingcart) {
+			String email, Integer id_phone, Integer id_adress,
+			String id_account, Integer shoppingcart) {
 
 		this.id_user = id_user;
-		this.password = password;
+		this.user_password = password;
 		this.user_state = user_state;
 		this.email = email;
 		this.id_phone = id_phone;
@@ -41,7 +42,7 @@ public class WebUser {
 
 	@Override
 	public String toString() {
-		return "WebUser [id_user=" + id_user + ", password=" + password
+		return "WebUser [id_user=" + id_user + ", password=" + user_password
 				+ ", user_state=" + user_state + ", email=" + email
 				+ ", id_phone=" + id_phone + ", id_adress=" + id_adress
 				+ ", id_account=" + id_account + ", shoppingcart="
@@ -57,11 +58,11 @@ public class WebUser {
 	}
 
 	public String getPassword() {
-		return password;
+		return user_password;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.user_password = password;
 	}
 
 	public String getUser_state() {
@@ -80,19 +81,19 @@ public class WebUser {
 		this.email = email;
 	}
 
-	public int getId_phone() {
+	public Integer getId_phone() {
 		return id_phone;
 	}
 
-	public void setId_phone(int id_phone) {
+	public void setId_phone(Integer id_phone) {
 		this.id_phone = id_phone;
 	}
 
-	public int getId_adress() {
+	public Integer getId_adress() {
 		return id_adress;
 	}
 
-	public void setId_adress(int id_adress) {
+	public void setId_adress(Integer id_adress) {
 		this.id_adress = id_adress;
 	}
 
@@ -104,11 +105,11 @@ public class WebUser {
 		this.id_account = id_account;
 	}
 
-	public int getId_shopping_cart() {
+	public Integer getId_shopping_cart() {
 		return id_shopping_cart;
 	}
 
-	public void setId_shopping_cart(int id_shopping_cart) {
+	public void setId_shopping_cart(Integer id_shopping_cart) {
 		this.id_shopping_cart = id_shopping_cart;
 	}
 

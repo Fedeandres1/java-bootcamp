@@ -53,4 +53,21 @@ public class Operation {
 		session.getTransaction().commit();
 	}
 
+	public boolean searchUser(String query) {
+		boolean res = false;
+
+		session.beginTransaction();
+
+		List<WebUser> list = (List<WebUser>) session.createQuery(query).list();
+
+		session.getTransaction().commit();
+		if (list.size() != 0) {
+			res = true;
+		} else {
+			res = false;
+		}
+
+		return res;
+	}
+
 }
