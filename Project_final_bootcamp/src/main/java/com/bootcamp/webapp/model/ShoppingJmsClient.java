@@ -11,7 +11,7 @@ public class ShoppingJmsClient implements ShoppingCartService {
 	}
 
 	@Override
-	public void buyProduct() {
+	public void buyProduct(Account account, ArrayList<LineItem> array) {
 		// TODO Auto-generated method stub
 
 	}

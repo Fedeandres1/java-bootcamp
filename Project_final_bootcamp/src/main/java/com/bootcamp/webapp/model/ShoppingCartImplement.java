@@ -12,8 +12,23 @@ public class ShoppingCartImplement implements ShoppingCartService {
 	}
 
 	@Override
-	public void buyProduct() {
-		// TODO Auto-generated method stub
+	public void buyProduct(Account account, ArrayList<LineItem> array) {
+		Account aux = account;
+		ArrayList<LineItem> list = array;
+		Payment pay = new Payment();
+		ShoppingOrder order = new ShoppingOrder();
+		operation.openConnection();
+		operation.saveObject(pay);
+		order.setId_payment(pay.getId_payment());
+		order.setId_ship_to_adress(aux.getBilling_adres());
+		operation.saveObject(order);
+		account.setId_order(order.getNumber());
+		operation.saveObject(aux);
+		for (int i = 0; i < list.size(); i++) {
+			list.get(i).setId_order(order.getNumber());
+			operation.saveObject(list.get(i));
+		}
+		operation.closeConnection();
 
 	}
 

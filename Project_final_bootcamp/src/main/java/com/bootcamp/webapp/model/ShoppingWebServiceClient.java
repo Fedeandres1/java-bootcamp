@@ -12,8 +12,8 @@ public class ShoppingWebServiceClient implements ShoppingCartService {
 	}
 
 	@Override
-	public void buyProduct() {
-		webService.buyProduct();
+	public void buyProduct(Account account, ArrayList<LineItem> array) {
+		webService.buyProduct(account, array);
 
 	}
 

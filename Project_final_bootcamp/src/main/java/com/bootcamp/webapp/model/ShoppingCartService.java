@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface ShoppingCartService {
 
-	public void buyProduct();
+	public void buyProduct(Account account, ArrayList<LineItem> array);
 
 	public ArrayList<Product> findProductByCategory(String category);
 

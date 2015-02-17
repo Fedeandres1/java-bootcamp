@@ -8,9 +8,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+import com.bootcamp.webapp.model.Account;
+import com.bootcamp.webapp.model.LineItem;
+import com.bootcamp.webapp.model.Payment;
 import com.bootcamp.webapp.model.Phone;
 import com.bootcamp.webapp.model.Product;
 import com.bootcamp.webapp.model.ShoppingCart;
+import com.bootcamp.webapp.model.ShoppingOrder;
 import com.bootcamp.webapp.model.WebUser;
 
 public class Operation {
@@ -48,7 +52,35 @@ public class Operation {
 
 	}
 
+	public void saveObject(ShoppingOrder obj) {
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+
+	}
+
 	public void saveObject(WebUser obj) {
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+
+	}
+
+	public void saveObject(Account obj) {
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+
+	}
+
+	public void saveObject(LineItem obj) {
+		session.beginTransaction();
+		session.save(obj);
+		session.getTransaction().commit();
+
+	}
+
+	public void saveObject(Payment obj) {
 		session.beginTransaction();
 		session.save(obj);
 		session.getTransaction().commit();

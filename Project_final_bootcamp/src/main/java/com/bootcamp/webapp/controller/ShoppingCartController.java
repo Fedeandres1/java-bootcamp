@@ -77,10 +77,11 @@ public class ShoppingCartController {
 		a.add(pass);
 		a.add(email);
 		a.add(phone);
-		res = ifNotEmpty(a);
+		res = ifEmpty(a);
 		if (res) {
 			mvc = new ModelAndView("register");
 			mvc.addObject("message", "Please insert the fields correctly");
+			return mvc;
 		} else {
 			WebUser webUser = new WebUser();
 			webUser.setId_user(id_user);
@@ -95,10 +96,9 @@ public class ShoppingCartController {
 
 			mvc = new ModelAndView("home");
 			mvc.addObject("message", "The registration is Ok - Welcome "
-					+ id_user);
+					+ id_user + ", you can login now :) ");
+			return mvc;
 		}
-
-		return mvc;
 	}
 
 	@RequestMapping(value = "/404", method = RequestMethod.GET)
@@ -131,7 +131,7 @@ public class ShoppingCartController {
 
 	@RequestMapping(value = "/saveShoppingCart", method = RequestMethod.POST)
 	public ModelAndView saveShoppingCart(
-			@RequestParam("nameUser") WebUser user,
+			@RequestParam("objectUser") WebUser user,
 			@RequestParam("shoppingCart") ShoppingCart shoppingcart) {
 		// the webuser has the id_shopping_cart then we need to save all that
 		shoppingService = shoppingFactory.getRemoteServiceUsingWebService();
@@ -142,8 +142,23 @@ public class ShoppingCartController {
 		return mvc;
 	}
 
+	// The webuser create a account and the account come to this method and
+	// create the order with the line item
+	@RequestMapping(value = "/buyProduct", method = RequestMethod.POST)
+	public ModelAndView buyProduct(
+			@RequestParam("accountUSer") Account account,
+			@RequestParam("lineItem") ArrayList<LineItem> arrayLineItem) {
+
+		shoppingService = shoppingFactory.getRemoteServiceUsingWebService();
+		shoppingService.buyProduct(account, arrayLineItem);
+
+		ModelAndView mvc = new ModelAndView("buyProduct");
+		mvc.addObject("message", "Thank you for buy in Best Shopping!");
+		return mvc;
+	}
+
 	// This method should place in other clase
-	private boolean ifNotEmpty(ArrayList<String> array) {
+	private boolean ifEmpty(ArrayList<String> array) {
 		boolean res = false;
 		ArrayList<String> a = array;
 		for (int i = 0; i < a.size(); i++) {

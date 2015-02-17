@@ -1,4 +1,4 @@
-/*create database  final_project;*/
+create database final_project;
 create table Phone(
 id_phone int auto_increment primary key,
 number int default null
@@ -42,7 +42,8 @@ id_ship_to_adress int default null,
 total float default null,
 state varchar(45) default null,
  id_payment int default null,
-constraint fk_payment foreign key ShoppingOrder(id_payment) references Payment(id_payment) 
+constraint fk_payment foreign key ShoppingOrder(id_payment) references Payment(id_payment),
+constraint fk_adrees_s foreign key  ShoppingOrder(id_ship_to_adress) references Adress(id_adress)
 );
 create table lineitem(
 id_line_item int auto_increment primary key,
@@ -64,8 +65,8 @@ close_date varchar(45) default null,
 id_order int default null,
 id_shopping_cart int default null,
 constraint fk_order_account foreign key Account(id_order) references ShoppingOrder(number),
-constraint fk_shopping_account foreign key Account(id_shopping_cart) references Shoppingcart(id_shopping_cart)
-
+constraint fk_shopping_account foreign key Account(id_shopping_cart) references Shoppingcart(id_shopping_cart),
+constraint fk_andress_a foreign key Account(billing_adress) references Adress(id_adress)
 );
 
 
@@ -75,7 +76,7 @@ constraint fk_shopping_account foreign key Account(id_shopping_cart) references 
 
 create table WEBUSER(
 id_user varchar(45) not null   primary key ,
-password varchar(45) not null default "" ,
+user_password varchar(45) not null default "" ,
 user_state varchar(45)  default null,
 email varchar(45) not null default "",
 id_adress int default null,

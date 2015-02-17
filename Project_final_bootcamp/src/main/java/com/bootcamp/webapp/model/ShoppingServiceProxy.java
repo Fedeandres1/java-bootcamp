@@ -12,8 +12,8 @@ public class ShoppingServiceProxy implements ShoppingCartService {
 	}
 
 	@Override
-	public void buyProduct() {
-		implement.buyProduct();
+	public void buyProduct(Account account, ArrayList<LineItem> array) {
+		implement.buyProduct(account, array);
 
 	}
 
@@ -36,7 +36,7 @@ public class ShoppingServiceProxy implements ShoppingCartService {
 	}
 
 	@Override
-	public void saveCart(WebUser user,ShoppingCart shoppingcart) {
+	public void saveCart(WebUser user, ShoppingCart shoppingcart) {
 		// TODO Auto-generated method stub
 
 	}

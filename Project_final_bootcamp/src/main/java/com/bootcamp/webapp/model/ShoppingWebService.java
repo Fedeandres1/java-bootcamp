@@ -9,8 +9,8 @@ public class ShoppingWebService implements ShoppingCartService {
 	ShoppingCartService imp = new ShoppingCartImplement();
 
 	@Override
-	public void buyProduct() {
-		// TODO Auto-generated method stub
+	public void buyProduct(Account account, ArrayList<LineItem> array) {
+		imp.buyProduct(account, array);
 
 	}
 
