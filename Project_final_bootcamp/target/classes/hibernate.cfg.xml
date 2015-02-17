@@ -32,7 +32,11 @@
 		<mapping class="com.bootcamp.webapp.model.Adress" />
 		<mapping class="com.bootcamp.webapp.model.Account" />
 		<mapping class="com.bootcamp.webapp.model.ShoppingCart" />
-
+		<mapping class="com.bootcamp.webapp.model.LineItem" />
+		<mapping class="com.bootcamp.webapp.model.ShoppingOrder" />
+		<mapping class="com.bootcamp.webapp.model.Payment" />
+		<mapping class="com.bootcamp.webapp.model.Product" />
+		<mapping class="com.bootcamp.webapp.model.Category" />
 
 	</session-factory>
 </hibernate-configuration>
