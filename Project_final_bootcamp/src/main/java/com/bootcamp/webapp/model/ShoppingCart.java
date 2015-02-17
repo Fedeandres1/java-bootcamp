@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class ShoppingCart {
 	@Id
 	@GeneratedValue
-	private int id_shopping_cart;
+	private Integer id_shopping_cart;
 	private String date;
 
 	public ShoppingCart() {

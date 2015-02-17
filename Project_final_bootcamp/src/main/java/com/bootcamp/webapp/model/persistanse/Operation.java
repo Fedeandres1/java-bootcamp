@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import com.bootcamp.webapp.model.Phone;
+import com.bootcamp.webapp.model.Product;
 import com.bootcamp.webapp.model.WebUser;
 
 public class Operation {
@@ -68,6 +69,18 @@ public class Operation {
 		}
 
 		return res;
+	}
+
+	public ArrayList<Product> getProductByNameOrCategory(String query) {
+		session.beginTransaction();
+
+		ArrayList<Product> list = (ArrayList<Product>) session.createQuery(
+				query).list();
+
+		session.getTransaction().commit();
+
+		return list;
+
 	}
 
 }
