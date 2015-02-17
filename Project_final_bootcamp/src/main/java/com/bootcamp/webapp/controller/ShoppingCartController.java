@@ -129,6 +129,19 @@ public class ShoppingCartController {
 		return mvc;
 	}
 
+	@RequestMapping(value = "/saveShoppingCart", method = RequestMethod.POST)
+	public ModelAndView saveShoppingCart(
+			@RequestParam("nameUser") WebUser user,
+			@RequestParam("shoppingCart") ShoppingCart shoppingcart) {
+		// the webuser has the id_shopping_cart then we need to save all that
+		shoppingService = shoppingFactory.getRemoteServiceUsingWebService();
+		shoppingService.saveCart(user, shoppingcart);
+		ModelAndView mvc = new ModelAndView("saveShoppingCart");
+		mvc.addObject("message", "The cart was save correctry");
+
+		return mvc;
+	}
+
 	// This method should place in other clase
 	private boolean ifNotEmpty(ArrayList<String> array) {
 		boolean res = false;

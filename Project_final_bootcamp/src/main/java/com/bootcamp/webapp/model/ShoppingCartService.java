@@ -16,7 +16,7 @@ public interface ShoppingCartService {
 
 	public double calculatePayment();
 
-	public void saveCart();
+	public void saveCart(WebUser id_user,ShoppingCart shoppingcart);
 
 	public String getCartContent();
 

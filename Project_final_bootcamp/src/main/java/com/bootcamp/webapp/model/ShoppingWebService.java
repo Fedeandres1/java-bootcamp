@@ -33,8 +33,8 @@ public class ShoppingWebService implements ShoppingCartService {
 	}
 
 	@Override
-	public void saveCart() {
-		// TODO Auto-generated method stub
+	public void saveCart(WebUser user,ShoppingCart shoppingcart) {
+		imp.saveCart(user, shoppingcart);
 
 	}
 
@@ -47,13 +47,13 @@ public class ShoppingWebService implements ShoppingCartService {
 	@Override
 	public ArrayList<Product> findProductByCategory(String category) {
 		// TODO Auto-generated method stub
-		return null;
+		return imp.findProductByCategory(category);
 	}
 
 	@Override
 	public ArrayList<Product> findProductByName(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		return imp.findProductByName(name);
 	}
 
 }

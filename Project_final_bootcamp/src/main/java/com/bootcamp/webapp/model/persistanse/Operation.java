@@ -10,6 +10,7 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 import com.bootcamp.webapp.model.Phone;
 import com.bootcamp.webapp.model.Product;
+import com.bootcamp.webapp.model.ShoppingCart;
 import com.bootcamp.webapp.model.WebUser;
 
 public class Operation {
@@ -32,6 +33,12 @@ public class Operation {
 		session.close();
 		sessionFactory.close();
 
+	}
+
+	public void saveShoppingCart(ShoppingCart cart) {
+		session.beginTransaction();
+		session.save(cart);
+		session.getTransaction().commit();
 	}
 
 	public void saveObject(Phone obj) {

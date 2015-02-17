@@ -36,8 +36,8 @@ public class ShoppingWebServiceClient implements ShoppingCartService {
 	}
 
 	@Override
-	public void saveCart() {
-		// TODO Auto-generated method stub
+	public void saveCart(WebUser user, ShoppingCart shoppingcart) {
+		webService.saveCart(user, shoppingcart);
 
 	}
 
@@ -50,13 +50,13 @@ public class ShoppingWebServiceClient implements ShoppingCartService {
 	@Override
 	public ArrayList<Product> findProductByCategory(String category) {
 		// TODO Auto-generated method stub
-		return null;
+		return webService.findProductByCategory(category);
 	}
 
 	@Override
 	public ArrayList<Product> findProductByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return webService.findProductByName(name);
 	}
 
 }

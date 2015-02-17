@@ -35,7 +35,7 @@ public class ShoppingJmsClient implements ShoppingCartService {
 	}
 
 	@Override
-	public void saveCart() {
+	public void saveCart(WebUser user,ShoppingCart shoppingcart) {
 		// TODO Auto-generated method stub
 
 	}

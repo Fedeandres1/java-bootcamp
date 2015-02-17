@@ -36,8 +36,15 @@ public class ShoppingCartImplement implements ShoppingCartService {
 	}
 
 	@Override
-	public void saveCart() {
-		
+	public void saveCart(WebUser user, ShoppingCart shoppingcart) {
+		String query = "";
+		operation.openConnection();
+		operation.saveShoppingCart(shoppingcart);
+		user.setId_shopping_cart(shoppingcart.getId_shopping_cart());
+		query = " update from WebUser " + " set id_shopping_cart="
+				+ user.getId_shopping_cart() + "where id_user='"
+				+ user.getId_user() + "'";
+		operation.executeQuery(query);
 
 	}
 
